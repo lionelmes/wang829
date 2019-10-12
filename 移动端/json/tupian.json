@@ -1,0 +1,23 @@
+[	
+	{
+		"h3":"About FAW",
+		"sr":[
+			{"url":"img/about_componey_03.png"},
+			{"url":"img/about_data_11.png"},
+			{"url":"img/about_hq_20.png"},
+			{"url":"img/about_qiu_22.png"},
+			{"url":"img/about_time_19.png"},
+			{"url":"img/baout_huaTong_05.png"},
+			{"url":"img/baout_people_07.png"},
+			{"url":"img/lxwm.png"}
+		],
+		"a1":" Profile",
+		"a2":" Chairman",
+		"a3":" Executives",
+		"a4":" Financial Data",
+		"a5":" History",
+		"a6":" Vision and Values",
+		"a7":" International",
+		"a8":" Contact Us"
+	}
+]
