@@ -1,0 +1,62 @@
+/第一种方法
+.box{
+//先写旧版flex,在适配新版
+  display: -webkit-box;
+//设置水平居中
+  -webkit-box-pack: center;
+//设置垂直居中
+  -webkit-box-align: center;
+  //适配新版flex
+  display: -webkit-flex;;
+  display: flex
+//设置水平居中
+  -webkit-justify-content: center;
+  justify-content: center;
+//设置垂直居中
+  -webkit-align-items: center;
+  align-items: center;
+/* 在移动web中,使用flex布局的时候,为了让渲染效果更好,先写旧版flex,再适配新版 */
+  }
+ 
+第二种：calc是css3的属性，但是在安卓UC浏览器中兼容不好，一般不再移动web中使用
+ 父级设置relative
+.son{
+  position: absolute;
+  left: -webkit-calc(50% - 50px);
+  left: -moz-calc(50% - 50px)
+  left: calc(50% - 50px)
+  top: -webkit-calc(50% - 50px);//需要注意的是，运算符前后都需要保留一个空格；
+  top: -moz-calc(50% - 50px)
+  top: calc(50% - 50px)
+}
+ 
+第三种：父级设置relative
+box{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left:50%;
+  top:50%;
+-webkit-transform: translate(-50% -50%);
+-moz-transform: translate(-50% -50%);
+-ms-transform: translate(-50% -50%);
+-o-transform: translate(-50% -50%);
+transform: translate(-50% -50%);
+}
+ 
+第四种：
+box{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left:50%;
+  top:50%;
+  margin-top:-50px;
+  margin-left:-50px;
+  }
+注意：在定位的时候，一定不要忘了写top、left、right、bottom的值。虽然在有些手机上不写样式不会乱掉，看起来没问题。但是为了确保万一，一定要写上。不要犯这种低级错误。
+
+之前在写移动端的页面的时候就时忘了写这几个属性的值，而是直接用margin-left、margin-top直接定位，结果在发现在苹果手机上出现了样式排版偏移的问题。
+弹性布局虽然好用，但兼容性并不太好，除了浏览器实现有差异外,PC与移动端也有差异。
+
+display: flex 与 display: box都用于弹性布局。display: box是2009年的命名，display: flex是2012之后的命名。但display: flex不能完全的向后兼容，有些浏览器不支持。（display: box 很少用）
